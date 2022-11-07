@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/kazoku.css">
+  <title>家族ゲーム</title>
+</head>
+
+<body>
+  <header>
+    <h1>家族ゲーム</h1>
+    <img src="img/marig.fam..jpg" alt="family">
+  </header>
+
+  <main>
+    <ul>
+      <li id="gu_btn">長女</li>
+      <li id="cho_btn">次女</li>
+      <li id="par_btn">長男</li>
+
+
+
+    </ul>
+    <div id="com_hand">子供の望み攻撃</div>
+    <div id="result">結果は？</div>
+  </main>
+
+  <footer>積算</footer>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+    //ここに処理を追加
+
+    const min = 0;
+    const max = 2;
+
+    // console.log(randomNumber);
+
+    //長女に話しかけた時;
+    $('#gu_btn').on('click', function () {
+      const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+      console.log(randomNumber);
+      if (randomNumber === 0) {
+        //alert('あなたはグーを出しました');
+        $('#com_hand').text('最近どお？');
+        $('#result').text('ミスコン出るけん「いいね」集めて！')
+
+      } else if (randomNumber === 1) {
+        //alert('あなたはグーを出しました');
+        $('#com_hand').text('元気？');
+        $('#result').text('明日友達泊めるけん！')
+
+      } else if (randomNumber === 2) {
+        //alert('あなたはグーを出しました');
+        $('#com_hand').text('今度いつ帰省する？');
+        $('#result').text('かばん買って！')
+
+      } else {
+        alert('それ以外');
+      }
+    });
+
+
+
+    //次女に話しかけた時;
+    $('#cho_btn').on('click', function () {
+      const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+      if (randomNumber === 0) {
+        //alert('あなたはチョキを出しました');
+        $('#com_hand').text('最近どお？');
+        $('#result').text('紹介したい人がいます')
+
+      } else if (randomNumber === 1) {
+        //alert('あなたはチョキを出しました');
+        $('#com_hand').text('元気？');
+        $('#result').text('結婚します！')
+
+      } else if (randomNumber === 2) {
+        //alert('あなたはチョキを出しました');
+        $('#com_hand').text('今度いつ帰省する？');
+        $('#result').text('旦那と帰省します')
+
+      } else {
+        alert('それ以外');
+      }
+    });
+
+    //長男に話しかけた時;
+    $('#par_btn').on('click', function () {
+      const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+      if (randomNumber === 0) {
+        //alert('あなたはパーを出しました');
+        $('#com_hand').text('最近どお？');
+        $('#result').text('お金がない')
+
+      } else if (randomNumber === 1) {
+        //alert('あなたはパーを出しました');
+        $('#com_hand').text('元気？');
+        $('#result').text('iphone買って')
+
+      } else if (randomNumber === 2) {
+        //alert('あなたはパーを出しました');
+        $('#com_hand').text('今度いつ帰省する？');
+        $('#result').text('お金下さい！')
+
+      } else {
+        alert('それ以外');
+      }
+
+
+    });
+
+
+  </script>
+
+</body>
+
+</html>

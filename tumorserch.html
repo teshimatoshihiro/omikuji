@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>腫瘤鑑別アプリ</title>
+</head>
+
+<body>
+  <div id="tumor"></div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+  <script>
+
+
+    const tumor = ["tumor1", "tumor2", "tumor3", "tumor4", "tumor5", "tumor6"];
+    const columun = 3;//列数
+    let len = tumor.length;//配列の数
+    let count = 1; //１を毎回足す変数
+    //繰り返し処理
+    for (let i = 0; i < len; i++) {
+      const r = Math.floor(Math.random() * tumor.length);
+      const v = tumor.splice(r, 1); //r番目の配列を１つ取り出す
+      //columun変数値で改行
+      if ((i + 1) % columun == 0) {
+        $("#tumor").append("|" + v + "<br>");
+      } else {
+        $("#tumor").append("|" + v);
+      }
+      count++; //countに１を足す
+    }
+
+
+
+  </script>
+</body>
+
+</html>
